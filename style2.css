@@ -149,13 +149,13 @@
     margin-top: 80px;
     margin-left: 5%;
     margin-right: 3%;
-    gap: 50px;
+    gap: 100px;
     position: relative;
     z-index:-1; 
     flex-wrap: nowrap;
 }
 .box {
-    margin-bottom:40%;
+    margin-bottom:10%; 
     width: 220px; 
     height: 220px;
     background-color: #f0f0f0; 
@@ -168,7 +168,7 @@
     font-size: 18px; 
     font-weight: bold;
     color: #333;
-    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 .img1,.img2,.img3,.img4{
 display: flex;
@@ -213,6 +213,8 @@ p {
 } */
 .swiper-wrapper {
     /* width: calc(100% * 7); */
+    width: max-content;
+    position: relative;
     display: flex;
     animation: 12s linear 0s infinite normal none running slider-animation;
 }
@@ -234,12 +236,26 @@ p {
     position: relative;
     z-index: 1;  */
 
+.media-container{
     /* display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
-} */
- .media-container-1 .media-container-2 { 
+    margin-top:30px;
+    width:100%;
+    padding:0 20px; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%; /* Center the buttons vertically */
+    transform: translateY(-50%); /* Center the buttons vertically */
+    width: 100%; /* Extend the width to cover the slider */
+    padding: 0 10px;
+    z-index: 1000;
+} 
+ /* .media-container-1 .media-container-2 { 
     
      padding: 10px 20px;
     background-color: rgb(74, 74, 255);
@@ -251,30 +267,53 @@ p {
      display: flex;
     justify-content: center;
     align-items: center
+} */
+.media-container img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
 }
 .media-container-1 {
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    left:0;
+    margin-left:20px;
 }
 
 .media-container-2 {
-    margin-left: 10px;
+    right:0;
+    margin-right: 20px;
+    transform: rotate(180deg);
+    
 } 
-
-
-
-
-
-
+.media-container-1,
+.media-container-2 {
+    background-color: rgb(74, 74, 255); /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 50%; /* Make buttons round */
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    display: flex; /* Center content */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content */
+    cursor: pointer; /* Add pointer cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
 .slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .swiper-wrapper {
     display: flex;
-    transition: transform 0.5s ease;
-}
+    transition: transform 0.5s ease-in-out;
+    width:max-content;
+    position: relative;
+} 
 
 
 /* .swiper-pagination {
