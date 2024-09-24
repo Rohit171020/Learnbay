@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learnbay form</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
 </head>
 <body>
     <nav class="flex-box">  
@@ -94,8 +95,6 @@
     
     </div>
 <div class = "swiper-wrapper">
-<div class = "box-container">
-
 <div class = "box">
     <div class = "img1">
         <img src = "https://course.learnbay.co/_next/image?url=https%3A%2F%2Fd32and0ii3b8oy.cloudfront.net%2Fweb%2Fs3_main%2Fmedia%2Fimage%2B2-min.webp&w=96&q=100">
@@ -116,6 +115,27 @@
     </div>
 </div>
 
+
+<!-- <div class = "box">
+    <div class = "img2">
+        <img src ="https://course.learnbay.co/_next/image?url=https%3A%2F%2Fd32and0ii3b8oy.cloudfront.net%2Fweb%2Fs3_main%2Fmedia%2Fdataquest.webp&w=96&q=100">
+    </div>
+    <div class = "wrapper-1">
+        <h2>Hey these services we are providing</h2>
+        <p>18th August</p>
+    </div>
+</div> -->
+
+<!-- <div class = "box">
+    <div class = "img2">
+        <img src ="https://course.learnbay.co/_next/image?url=https%3A%2F%2Fd32and0ii3b8oy.cloudfront.net%2Fweb%2Fs3_main%2Fmedia%2Fdataquest.webp&w=96&q=100">
+    </div>
+    <div class = "wrapper-1">
+        <h2>Hey these services we are providing</h2>
+        <p>18th August</p>
+    </div>
+</div> -->
+
 <div class = "box">
     <div class = "img3">
         <img src = "https://course.learnbay.co/_next/image?url=https%3A%2F%2Fd32and0ii3b8oy.cloudfront.net%2Fweb%2Fs3_main%2Fmedia%2FPM-Logo.webp&w=96&q=100">
@@ -126,7 +146,7 @@
     </div>
 </div>
 
-
+<!-- 
 <div class = "box">
     <div class = "img2">
         <img src ="https://course.learnbay.co/_next/image?url=https%3A%2F%2Fd32and0ii3b8oy.cloudfront.net%2Fweb%2Fs3_main%2Fmedia%2Fdataquest.webp&w=96&q=100">
@@ -134,7 +154,7 @@
     <div class = "wrapper-1">
         <h2>Hey these services we are providing</h2>
         <p>18th August</p>
-    </div>
+    </div> -->
 </div>
 </div>
 </div>
@@ -148,38 +168,71 @@
     <span class="swiper-bullet"></span>
 </div> -->
 
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const prevButton = document.querySelector('.media-container-1'); // Select the "Previous" button
-    const nextButton = document.querySelector('.media-container-2'); // Select the "Next" button
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
-    const slideWidth = document.querySelector('.box').offsetWidth; // Width of each slide
-    let currentIndex = 0; 
 
-    function updateSlider() {
-        const offset = -currentIndex * slideWidth;
-        swiperWrapper.style.transform = `translateX(${offset}px)`; // Corrected: Added backticks and px unit
-    }
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const prevButton = document.querySelector('.media-container-1');
+        const nextButton = document.querySelector('.media-container-2');
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const slides = document.querySelectorAll('.box');
+        const slideWidth = slides[0].offsetWidth + 20; // Slide width + margin
+        let currentIndex = 0;
 
-    nextButton.addEventListener('click', function() {
-        const totalSlides = document.querySelectorAll('.box').length;
-        if (currentIndex < totalSlides - 1) {
-            currentIndex++;
-            updateSlider();
+        function updateSlider() {
+            const offset = -currentIndex * slideWidth;
+            swiperWrapper.style.transform = `translateX(${offset}px)`;
         }
-    });
 
-    prevButton.addEventListener('click', function() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
+        nextButton.addEventListener('click', function() {
+            const totalSlides = slides.length;
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+
+        prevButton.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+    });
+    </script>>  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+   
+    <script>
+      var swiper = new Swiper(".swiper-wrapper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".media-container-1",
+          prevEl: ".media-container-2",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+        slidesPerView: 4,
+        spaceBetween: 3,
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
         }
-    });
-});
-
-
-    </script> 
+      });
+    </script>
     
 </body>
 </html>
